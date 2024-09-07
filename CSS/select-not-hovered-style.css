@@ -1,0 +1,35 @@
+/* ------------------------------- */
+/* 
+select contents(child) of a container(parent) which are not hovered
+*/
+.div1:hover > p:not(:hover) {
+  background-color: rgba(255, 0, 0, 0.123);
+}
+
+/* ---------------------------- */
+div {
+  display: flex;
+  width: fit-content;
+  margin-bottom: 5px;
+  border-radius: 22px;
+  padding: 3px;
+}
+
+.div1 {
+  border: 5px solid salmon;
+}
+.div2 {
+  border: 5px solid rgb(46, 63, 219);
+}
+
+p {
+  width: 200px;
+  height: 200px;
+  background-color: cadetblue;
+  margin: 2px;
+  border-radius: 18px;
+  align-content: center;
+  text-align: center;
+  color: white;
+  font-size: larger;
+}
