@@ -1,0 +1,53 @@
+div {
+  margin-bottom: 5px;
+  border: 5px solid tomato;
+  padding: 2px;
+}
+
+.div1 > img {
+  display: block;
+  max-width: calc(25% - 13.5px);
+  /*calulation for border-box calc(25% - reduction)
+    reduction = [margin*total content + (total content - 1)*gap]/total content
+    5.5px = [4*4 + (4 - 1)*2]/4                                  
+  */
+
+  /*calulation for content-box calc(25% - reduction)
+    reduction = [(margin + border + padding)*total content + (total content - 1)*gap]/total content
+    13.5px = [(4+4+4)*4 + (4 - 1)*2]/4                                  
+  */
+  margin: 2px;
+  border: 2px solid green;
+  padding: 2px;
+  /* box-sizing: border-box; */
+}
+
+.div1 {
+  display: flex;
+  gap: 2px;
+}
+.div2 > img {
+  max-width: calc(100% - 24px);
+  margin: 5px;
+  border: 5px solid green;
+  padding: 2px;
+  box-sizing: content-box;
+}
+
+.div3 > img {
+  max-width: calc(100% - 10px);
+  margin: 5px;
+  border: 5px solid green;
+  padding: 2px;
+  box-sizing: border-box;
+}
+
+/* 
+1. Content start: top left corner of the container after margin, border and padding.
+2. Width of the content is calculated from content start.
+3. box-sizing: content-box
+   Total width= content's specified width + margin + border + padding
+4. box-sizing: border-box
+   Total width = content's specified width + margin
+   here, content's specified width = content width + border + padding
+*/
